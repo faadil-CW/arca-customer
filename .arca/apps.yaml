@@ -3,15 +3,11 @@ kind: AppManifest
 spec:
   apps:
     - name: nginx
-      source:
-        type: kustomize
-        git:
-          path: ./apps/nginx
-          branch: main
+      path: ./apps/nginx
+      type: kustomize
       targets:
-        - clusterRef:
-            name: arca-customer
-          targetNamespace: default
+        - cluster: arca-customer
+          namespace: default
       syncPolicy:
         interval: 5m
         prune: true
