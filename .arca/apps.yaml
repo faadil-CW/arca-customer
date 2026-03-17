@@ -1,0 +1,18 @@
+apiVersion: arca.coreweave.com/v1alpha1
+kind: AppManifest
+spec:
+  apps:
+    - name: nginx
+      source:
+        type: kustomize
+        git:
+          path: ./apps/nginx
+          branch: main
+      targets:
+        - clusterRef:
+            name: arca-customer
+          targetNamespace: default
+      syncPolicy:
+        interval: 5m
+        prune: true
+        selfHeal: true
