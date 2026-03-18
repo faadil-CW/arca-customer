@@ -22,7 +22,7 @@ spec:
         version: v1.17.1
         releaseName: cert-manager
         valuesFiles:
-          - ./apps/cert-manager/values.yaml
+          - ./values.yaml
       targets:
         - cluster: arca-customer
           namespace: cert-manager
@@ -40,7 +40,7 @@ spec:
         version: 34.4.0
         releaseName: traefik
         valuesFiles:
-          - ./apps/traefik/values.yaml
+          - ./values.yaml
       targets:
         - cluster: arca-customer
           namespace: traefik
@@ -58,7 +58,7 @@ spec:
         version: 27.5.1
         releaseName: prometheus
         valuesFiles:
-          - ./apps/prometheus/values.yaml
+          - ./values.yaml
       targets:
         - cluster: arca-customer
           namespace: monitoring
