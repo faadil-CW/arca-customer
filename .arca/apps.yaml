@@ -68,17 +68,3 @@ spec:
         interval: 5m
         prune: true
         selfHeal: true
-    - name: grafana
-      type: helm
-      helm:
-        chart: grafana
-        repoURL: https://grafana.github.io/helm-charts
-        version: 8.8.4
-        releaseName: grafana
-      targets:
-        - cluster: arca-customer
-          namespace: monitoring
-      syncPolicy:
-        interval: 5m
-        prune: true
-        selfHeal: true
