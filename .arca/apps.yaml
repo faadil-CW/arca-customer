@@ -6,7 +6,7 @@ spec:
       path: ./apps/nginx
       type: kustomize
       targets:
-        - cluster: arca-customer
+        - cluster: cks
           namespace: default
       syncPolicy:
         interval: 5m
@@ -21,7 +21,7 @@ spec:
         version: v1.17.1
         releaseName: cert-manager
       targets:
-        - cluster: arca-customer
+        - cluster: cks
           namespace: cert-manager
       syncPolicy:
         interval: 5m
@@ -36,7 +36,7 @@ spec:
         version: 34.4.0
         releaseName: traefik
       targets:
-        - cluster: arca-customer
+        - cluster: cks
           namespace: traefik
       syncPolicy:
         interval: 5m
@@ -51,7 +51,7 @@ spec:
         version: 27.5.1
         releaseName: prometheus
       targets:
-        - cluster: arca-customer
+        - cluster: cks
           namespace: monitoring
       syncPolicy:
         interval: 5m
@@ -62,7 +62,7 @@ spec:
       path: ./apps/metrics-server
       type: kustomize
       targets:
-        - cluster: arca-customer
+        - cluster: cks
           namespace: kube-system
       syncPolicy:
         interval: 5m
